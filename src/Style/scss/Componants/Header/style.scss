@@ -1,13 +1,21 @@
+*{
+    overflow-x: hidden;
+}
 .Header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    
+    // padding-left: 1rem;
+    // padding-right: 1rem;
     background-color: lightcyan;
-    width: 99%;
-
+    width: 100%;
+    .contenue{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
     .Log {
         display: flex;
         flex-wrap: wrap;
