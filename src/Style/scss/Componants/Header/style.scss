@@ -1,0 +1,16 @@
+.Header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: lightcyan;
+
+    .Log {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 11rem;
+    }
+}

@@ -1,0 +1,22 @@
+.Footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: lightcyan;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+
+    bottom: 0;
+
+    p{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .up {
+        height: 2rem;
+        width: 2rem;
+        background-color: red;
+        margin-left: 2rem;
+    }
+}
