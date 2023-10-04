@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 5rem;
 
     .Payement-content {
         display: flex;
@@ -18,16 +19,25 @@
             justify-content: center;
             align-items: center;
 
+            input {
+                margin-bottom: 1rem;
+            }
+
             input, label {
                 width: 25rem;
+                height: 1.5rem;
             }
 
             .smallInput {
                 display: flex;
+                justify-content: space-between;
+                width: 407px;
+                
 
                 .smallInput-input {
                     display: flex;
                     flex-direction: column;
+
                     input, label {
                         width: 10rem;
                     }
