@@ -1,43 +1,44 @@
-import sqlite3
+import mysql.connector
 
-# connexion à la base de données hébergée sur un serveur distant
+# Paramètres de connexion à la base de données hébergée sur un serveur distant
 host = "192.168.184.205"
+port = 3306
 user = "admin"
 password = "mdp"
-database = "Hackaton.db"
+database = "Hackaton"
 
-# Fonction permettant d'aller chercher le fichier SQL et d'exécuter les requêtes SQL
+# Fonction permettant d'exécuter les requêtes SQL depuis un fichier
 def execute_sql_from_file(cursor, file_path):
     try:
         with open(file_path, 'r') as sql_file:
-            sql_statements = sql_file.read().split(';') # Séparation des requêtes SQL pour une éxecution séparée
+            sql_statements = sql_file.read().split(';') # Séparation des requêtes SQL pour une exécution séparée
             for sql_statement in sql_statements:
                 if sql_statement.strip():
                     cursor.execute(sql_statement)
-    except sqlite3.Error as e:
+    except mysql.connector.Error as e:
         print(f"Erreur lors de l'exécution des requêtes SQL : {e}")
 
-dbname = 'Hackaton.db'
+# Connexion à la base de données
+try:
+    conn = mysql.connector.connect(
+        host=host,
+        port=port,
+        user=user,
+        password=password,
+        database=database
+    )
 
-# connexion à la base de données hébergée sur un serveur distant
-conn = sqlite3.connect(
-    database,
-    host=host,
-    user=user,
-    password=password
-)
+    cursor = conn.cursor()
 
-conn = sqlite3.connect(dbname)
+    # Chemin vers le fichier SQL contenant les requêtes
+    sql_file_path = 'app.sql'
 
-cursor = conn.cursor()
+    # Exécution de toutes les requêtes SQL à partir du fichier
+    execute_sql_from_file(cursor, sql_file_path)
 
-# Chemin vers le fichier SQL contenant les requêtes
-sql_file_path = 'app.sql'
+    conn.commit()
+    conn.close()
 
-# Exécution de toutes les requêtes SQL à partir du fichier
-execute_sql_from_file(cursor, sql_file_path)
-
-conn.commit()
-conn.close()
-
-print('OK')
+    print('OK')
+except mysql.connector.Error as e:
+    print(f"Erreur lors de la connexion à la base de données : {e}")
