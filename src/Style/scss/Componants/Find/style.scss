@@ -2,13 +2,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-bottom: 3rem;
+    margin: 2rem 0;
+    padding: 3rem 1rem;
+    background-color: lightcyan;
+    width: 80%;
+    margin: auto;
 
     .Find-form {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 5rem;
+        padding: auto;
 
         input {
             width: 20rem;
