@@ -1,0 +1,39 @@
+.Payement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .Payement-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .Payement-detail, .Payement-form {
+            width: 40rem;
+        }
+
+        .Payement-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            input, label {
+                width: 25rem;
+            }
+
+            .smallInput {
+                display: flex;
+
+                .smallInput-input {
+                    display: flex;
+                    flex-direction: column;
+                    input, label {
+                        width: 10rem;
+                    }
+                }
+                
+            }
+        }
+    }
+}
