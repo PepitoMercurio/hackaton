@@ -1,0 +1,10 @@
+.Profil {
+    display: flex;
+    flex-wrap: wrap;
+
+    img {
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+    }
+}
