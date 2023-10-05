@@ -1,19 +1,36 @@
-import React from "react";
-import Map from "../Map";
+import React, { useState, useEffect } from "react";
+import BornesFetch from "../../API/BornesFetch";
+import MapDisplay from "../FetchAPI_V/MapDisplay";
 import Button from "../Button";
-import "../../Style/scss/Componants/Find/style.scss"
+import "../../Style/scss/Componants/Find/style.scss";
 
 export default function Find() {
-    return (
-        <div className="Find">
-            <div className="Find-contenue">
-                <Map/>
-                <form className="Find-form">
-                    <h2>Entrez une adresse pour trouver les velos à proximité.</h2>
-                    <input name="address" className="address" placeholder="Adresse (ex : Pl. Charles de Gaulle, 75008 Paris)"/>
-                    <Button text="Rechercher"/>
-                </form>
-            </div>
-        </div>
-    )
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Appel à la fonction BornesFetch pour récupérer les données
+    BornesFetch({ setData, setLoading });
+  }, []);
+
+  return (
+    <div className="Find">
+      <div className="Find-contenue">
+        {!loading ? (
+          <MapDisplay stations={data.results} />
+        ) : (
+          <p>Chargement...</p>
+        )}
+        <form className="Find-form">
+          <h2>Entrez une adresse pour trouver les vélos à proximité.</h2>
+          <input
+            name="address"
+            className="address"
+            placeholder="Adresse (ex : Pl. Charles de Gaulle, 75008 Paris)"
+          />
+          <Button text="Rechercher" />
+        </form>
+      </div>
+    </div>
+  );
 }

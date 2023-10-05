@@ -11,7 +11,7 @@ function APIFetcher() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    <BornesFetch setData={setData} setLoading={setLoading} />
+    BornesFetch({ setData, setLoading });
   }, []);
 
   if (loading) {

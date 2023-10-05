@@ -4,6 +4,7 @@ import LoginPage from './Pages/Login';
 import SignInPage from './Pages/Sign-In';
 import PayemantPage from './Pages/Payement'
 import ProfilPage from './Pages/Profil';
+import AdminPage from './Pages/Admin';
 import APIFetcher from './Compotants/FetchAPI_V/APIFetcher';
 import './App.css';
 
@@ -17,7 +18,8 @@ function App() {
         <Route path="/sign-in" element={<SignInPage />} /> 
         <Route path="/payement" element={<PayemantPage />} />  
         <Route path="/profil" element={<ProfilPage />} />
-        <Route path="/Reservation" element={<APIFetcher />} />
+        <Route path="/reservation" element={<APIFetcher />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </Router>
     </div>
