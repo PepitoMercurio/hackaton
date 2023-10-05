@@ -1,4 +1,6 @@
 .Button {
+    background-color:#2fbb7a ;
+    
     background-color: #3AE594;
     color: black;
     padding-top: 0.5rem;
@@ -11,7 +13,6 @@
 
     &:hover {
         background-color: rgb(230, 230, 230);
-        color: #2fbb7a;
         transition-duration: 0.5s;
     }
 }
