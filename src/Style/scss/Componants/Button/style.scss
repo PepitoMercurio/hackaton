@@ -1,5 +1,6 @@
 .Button {
-    background-color: lightcyan;
+    background-color: #3AE594;
+    color: black;
     padding-top: 0.5rem;
     padding-bottom: 0.7rem;
     padding-left: 2rem;
@@ -9,7 +10,8 @@
     cursor: pointer;
 
     &:hover {
-        background-color: cyan;
+        background-color: rgb(230, 230, 230);
+        color: #2fbb7a;
         transition-duration: 0.5s;
     }
 }
