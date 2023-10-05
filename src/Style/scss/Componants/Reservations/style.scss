@@ -1,0 +1,31 @@
+.CurrentReservation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    .Reservations {
+        background-color: #3ae5956c;
+        width: 25rem;
+        height: 30rem;
+        overflow-y: scroll;
+        border-radius: 5px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+
+        &::-webkit-scrollbar{
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: rgba(255, 255, 255, 0.366);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(170, 170, 170); /* color of the scroll thumb */
+            border-radius: 20px; /* roundness of the scroll thumb */
+        }
+    }
+}
