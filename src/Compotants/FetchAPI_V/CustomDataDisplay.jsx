@@ -1,4 +1,5 @@
 import React from 'react';
+// import MapDisplay from './MapDisplay.js';
 
 function CustomDataDisplay({ data }) {
   return (
@@ -11,12 +12,13 @@ function CustomDataDisplay({ data }) {
             <li key={index}>
               <p>Station : {station.name}</p>
               <p>Capacité : {station.capacity} places</p>
-              <p>{station.coordonnees_geo.lon}</p>
-              <p>{station.coordonnees_geo.lat}</p>
+              <p>Longitude : {station.coordonnees_geo.lon}</p>
+              <p>Latitude : {station.coordonnees_geo.lat}</p>
             </li>
           ))}
         </ul>
       </div>
+      {/* <MapDisplay stations={data.results} /> */}
     </div>
   );
 }

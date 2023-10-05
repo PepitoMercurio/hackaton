@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CustomDataDisplay from './CustomDataDisplay';
+import MapDisplay from './MapDisplay'; // Assurez-vous que le chemin d'importation est correct
 
 function APIFetcher() {
-  const [data, setData] = useState(null); // Initialisez data à null
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,7 +17,6 @@ function APIFetcher() {
       })
       .then(apiData => {
         setData(apiData);
-        // console.log(apiData);
         setLoading(false);
       })
       .catch(error => {
@@ -32,6 +32,7 @@ function APIFetcher() {
   return (
     <div className="App">
       <CustomDataDisplay data={data} />
+      <MapDisplay stations={data.results} />
     </div>
   );
 }
