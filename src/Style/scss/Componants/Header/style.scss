@@ -1,25 +1,28 @@
-*{
+* {
     overflow-x: hidden;
 }
+
 .Header {
-    
-    // padding-left: 1rem;
-    // padding-right: 1rem;
-    background-color: lightcyan;
+    z-index: 10;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
+    background-color: rgb(64, 184, 60);
     width: 100%;
-    .contenue{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+    box-shadow: 0px 5px 5px rgb(64, 184, 60);
+}
+
+.Header .contenue {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
     
-    .Log {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 11rem;
-    }
+}
+
+.Header .Log {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 11rem;
 }
