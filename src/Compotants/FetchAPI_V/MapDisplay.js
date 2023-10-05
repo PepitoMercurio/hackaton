@@ -6,7 +6,7 @@ import L from 'leaflet';
 // Assurez-vous que customMarkerIcon est correctement importé depuis l'emplacement approprié
 import customMarkerIcon from '../../Style/img/custom-marker-icon.png';
 
-function MapDisplay({ stations }) {
+function MapDisplay(props) {
   return (
     <MapContainer
       center={[48.8566, 2.3522]}
@@ -17,7 +17,7 @@ function MapDisplay({ stations }) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      {stations.map((station, index) => (
+      {props.stations.map((station, index) => (
         <Marker
           key={index}
           position={[station.coordonnees_geo.lat, station.coordonnees_geo.lon]}

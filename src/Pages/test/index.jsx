@@ -1,8 +1,11 @@
 import React from 'react';
+import Footer from '../../Compotants/Footer';
+import Header from "../../Compotants/Header";
 
 function CustomDataDisplay({ data }) {
   return (
     <div className="custom-data">
+      <Header/>
       <h1>Affichage de l'API des vélib</h1>
       <div>
         <p>Nombre de stations disponibles : {data.total_count}</p>
@@ -17,7 +20,9 @@ function CustomDataDisplay({ data }) {
           ))}
         </ul>
       </div>
+      <Footer/>
     </div>
+    
   );
 }
 

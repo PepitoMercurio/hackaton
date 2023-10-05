@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CustomDataDisplay from './CustomDataDisplay';
 import MapDisplay from './MapDisplay'; // Assurez-vous que le chemin d'importation est correct
+import Header from '../Header';
+import Footer from '../Footer';
 
 function APIFetcher() {
   const [data, setData] = useState(null);
@@ -31,8 +33,10 @@ function APIFetcher() {
 
   return (
     <div className="App">
+      <Header/>
       <CustomDataDisplay data={data} />
       <MapDisplay stations={data.results} />
+      <Footer/>
     </div>
   );
 }

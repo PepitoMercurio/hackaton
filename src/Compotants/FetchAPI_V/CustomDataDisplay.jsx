@@ -1,9 +1,11 @@
 import React from 'react';
+
 // import MapDisplay from './MapDisplay.js';
 
 function CustomDataDisplay({ data }) {
   return (
     <div className="custom-data">
+      
       <h1>Affichage de l'API des vélib</h1>
       <div>
         <p>Nombre de stations disponibles : {data.total_count}</p>
@@ -18,8 +20,11 @@ function CustomDataDisplay({ data }) {
           ))}
         </ul>
       </div>
+      
       {/* <MapDisplay stations={data.results} /> */}
+      
     </div>
+    
   );
 }
 

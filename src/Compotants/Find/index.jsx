@@ -7,7 +7,7 @@ export default function Find() {
     return (
         <div className="Find">
             <div className="Find-contenue">
-                <Map/>
+                {/* <Map/> */}
                 <form className="Find-form">
                     <h2>Entrez une adresse pour trouver les velos à proximité.</h2>
                     <input name="address" className="address" placeholder="Adresse (ex : Pl. Charles de Gaulle, 75008 Paris)"/>
