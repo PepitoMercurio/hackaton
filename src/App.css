@@ -4,6 +4,7 @@
 }
 .test{
   background-color: rgb(245, 237, 230);
+  height: 100%;
 }
 .App-logo {
   height: 40vmin;

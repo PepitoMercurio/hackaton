@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBicycle, faTablet } from '@fortawesome/free-solid-svg-icons'
+// import "../../Style/scss/Componants/Stats/style.scss"
 import "../../Style/scss/Componants/Stats/style.scss"
 
 export default function Stats() {

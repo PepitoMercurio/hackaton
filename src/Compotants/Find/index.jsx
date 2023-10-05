@@ -3,6 +3,7 @@ import BornesFetch from "../../API/BornesFetch";
 import MapDisplay from "../FetchAPI_V/MapDisplay";
 import Button from "../Button";
 import "../../Style/scss/Componants/Find/style.scss";
+import velibImage from "../../Style/img/Velib-couple.png";
 
 export default function Find() {
   const [data, setData] = useState(null);
@@ -15,6 +16,7 @@ export default function Find() {
 
   return (
     <div className="Find">
+        <img src={velibImage} alt="Velib Paris" />
       <div className="Find-contenue">
         {!loading ? (
           <MapDisplay stations={data.results} />

@@ -1,0 +1,22 @@
+.Contenue{
+    display: flex;
+    
+    .Image{
+        width: 45%;
+        margin: auto;
+        text-align: center;
+        background-color: rgb(231, 231, 231);
+        box-shadow: 5px 5px black;
+        border-radius: 5px;
+    }
+    .Image h2{
+        
+    }
+    &__etape{
+        width: 45%;
+        margin: 5rem auto;
+    }
+    .Titre h2{
+        color: rgb(253, 36, 36);
+    }
+}
