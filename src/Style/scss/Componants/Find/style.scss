@@ -1,9 +1,14 @@
 .Find {
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding-bottom: 3rem;
-
+    .Find-contenue{
+        background-color: bisque;
+        display: flex;
+    flex-wrap: wrap;
+    }
     .Find-form {
         display: flex;
         flex-direction: column;

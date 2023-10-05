@@ -1,20 +1,26 @@
 .Footer {
+    // position: fixed;
+    bottom: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background-color: lightcyan;
+    background-color:  rgba(255, 126, 77, 1);
     width: 100%;
+    text-align: center; /* Centrer le texte horizontalement */
 
-    bottom: 0;
+    /* Ajoutez de l'espace autour du texte et de l'icône */
+    padding: 10px;
+}
 
-    p{
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .up {
-        height: 2rem;
-        width: 2rem;
-        background-color: red;
-        margin-left: 2rem;
-    }
+.up {
+    height: 2rem;
+    width: 2rem;
+    background-color: red;
+    margin-left: 2rem;
+}
+
+/* Style pour le texte dans le footer */
+.Footer p {
+    margin-left: auto;
+    margin-right: auto;
 }

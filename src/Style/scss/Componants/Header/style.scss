@@ -3,16 +3,16 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: lightcyan;
+    background-color:  rgba(255, 126, 77, 1);
     width: 100%;
 
     a {
-        color: black;
+        color: rgb(236, 236, 236);
         text-decoration: none;
         transition-duration: 0.5s;
 
         &:hover {
-            color: white;
+            color: rgb(0, 0, 0);
             transition-duration: 0.5s;
         }
     }

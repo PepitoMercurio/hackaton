@@ -12,20 +12,33 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 5rem;
-        background-color: lightblue;
+        margin: 5rem auto;
         padding: 2rem;
-        padding-left: 10%;
-        padding-right: 10%;
+        width: 25%;
+        background-color: #17995C;
+        // padding: 2rem;
+        // padding-left: 10%;
+        // padding-right: 10%;
         border-radius: 20px;
+
     
         input {
-            width: 20rem;
+            padding: 0.5rem;
+            border-radius: 2px;
+            width: 14rem;
             margin-bottom: 2rem;
         }
 
         p {
             font-size: smaller;
         }
+        
     }
+    
+}
+.SignIn-input{
+    margin-top: 2rem;
+display: flex;
+flex-direction: column;
+text-align:left;
 }
