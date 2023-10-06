@@ -1,3 +1,4 @@
+-- Cette instruction est spécifique à MySQL et n'est pas nécessaire pour SQLite3
 -- CREATE DATABASE IF NOT EXISTS Hackaton;
 
 CREATE TABLE IF NOT EXISTS User_Address (
@@ -56,4 +57,3 @@ CREATE TABLE IF NOT EXISTS Users (
     FOREIGN KEY (address_id) REFERENCES User_Address(id),
     FOREIGN KEY (co2_id) REFERENCES CO2(id)
 );
-
