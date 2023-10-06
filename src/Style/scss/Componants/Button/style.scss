@@ -1,6 +1,6 @@
 .Button {
     // background-color:#2fbb7a ;
-    background-color: rgba(162, 180, 58, 1);
+    background-color:#151414;
     // background-color: #3AE594;
     color: black;
     padding-top: 0.5rem;
@@ -10,10 +10,12 @@
     border-radius: 2rem;
     transition-duration: 0.5s;
     cursor: pointer;
+    box-shadow: 2px 5px#ff5e14;
 
     &:hover {
         // background-color: rgb(230, 230, 230);
-        background-color: rgba(185, 206, 61, 1);
+        // background-color: rgba(185, 206, 61, 1);
         transition-duration: 0.5s;
+        box-shadow: none;
     }
 }
