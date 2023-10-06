@@ -3,7 +3,7 @@ import Header from "../../Compotants/Header";
 import Button from "../../Compotants/Button";
 import "../../Style/scss/Pages/Sav/styles.scss"
 import Footer from "../../Compotants/Footer";
-import Mailer from "../../Mailer";
+import Mailer from "../../Compotants/Mailer";
 import velibImage from "../../Style/img/Vélib'-Métropole.jpg";
 
 export default function SavPage() {

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from '@emailjs/browser';
-import "../Style/scss/Componants/Mailer/style.scss"
-import Button from "../Compotants/Button";
+import "../../Style/scss/Componants/Mailer/style.scss"
+import Button from "../Button";
 
 export default function Mailer() {
     const form = useRef();
@@ -39,7 +39,7 @@ export default function Mailer() {
 
                 <textarea placeholder="Votre message" name="message"/>
 
-                <Button text={"Envoyer"} />
+                <Button text={"Envoyer"} click={sendEmail} />
 
                 <p>{confirmMessage}</p>
             </form>
