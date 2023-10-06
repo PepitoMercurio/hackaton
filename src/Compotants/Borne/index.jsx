@@ -1,56 +1,59 @@
 import React, { useState } from "react";
-import Header from "../../Compotants/Header";
-import Footer from "../../Compotants/Footer";
+import Header from "../Header";
+import Footer from "../Footer";
+import Button from "../Button";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../../Style/scss/Componants/Borne/style.scss"; // Correction du chemin pour le style
 
 export default function Borne() {
+
   const [pickupLocation, setPickupLocation] = useState("");
   const [pickupDate, setPickupDate] = useState("");
-  const [dropoffDate, setDropoffDate] = useState("");
+  const [reservationDuration, setReservationDuration] = useState(""); // Changement du nom de la variable
   const [bikeType, setBikeType] = useState("electrique");
+  const navigate = useNavigate();
 
-  const handleReservation = () => {
-    // Vous pouvez ajouter ici la logique pour effectuer la réservation.
-    // Par exemple, envoyer les données au backend.
-    console.log("Réservation effectuée !");
+  const [reservationData, setReservationData] = useState({
+    id: 1,
+    user_id: 1,
+    station_id: 123,
+    reserv_date: "2023-10-10",
+    total_price: 5, // Modification de la valeur par défaut
+  });
+
+  const handleReservation = async () => {
+    try {
+      // const response = await axios.post(
+      //   "http://localhost:3001/add-reservation",
+      //   reservationData
+      // );
+      // console.log("Réservation effectuée avec succès", response.data);
+      navigate("/payement")
+    } catch (error) {
+      console.error("Erreur lors de la réservation :", error);
+    }
   };
 
   return (
     <div>
       <Header />
-      <h1>Réservation de Vélos</h1>
-      <div>
-        <label htmlFor="pickupLocation">Lieu de prise en charge : </label>
-        <input
-          type="text"
-          id="pickupLocation"
-          value={pickupLocation}
-          onChange={(e) => setPickupLocation(e.target.value)}
-        />
-      </div>
-
-
-      <div>
-        <label htmlFor="pickupDate">Date de prise en charge : </label>
-        <input
-          type="text"
-          id="pickupDate"
-          value={pickupDate}
-          onChange={(e) => setPickupDate(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="dropoffDate">Durée de la location : </label>
-        <input
-          type="text"
-          id="dropoffDate"
-          value={dropoffDate}
-          onChange={(e) => setDropoffDate(e.target.value)}
-        />
-      </div>
-
-      <div>
-        <label>Choix du Vélib:</label>
-        <div>
+      <div className="Borne">
+        <h1>Réservation de Vélos</h1>
+        <form>
+          <h2>BORNE</h2>
+          <h3>5.00$</h3>
+          <label htmlFor="reservationDuration">
+            Durée de la location (heures) :
+          </label> 
+          <input
+            type="number"
+            id="reservationDuration"
+            placeholder="En heures"
+            value={reservationDuration}
+            onChange={(e) => setReservationDuration(e.target.value)} 
+          />
+          <label>Choix du Vélib:</label>
           <label>
             <input
               type="radio"
@@ -61,8 +64,6 @@ export default function Borne() {
             />
             Électrique
           </label>
-        </div>
-        <div>
           <label>
             <input
               type="radio"
@@ -73,10 +74,9 @@ export default function Borne() {
             />
             Mécanique
           </label>
-        </div>
+          <Button text={"Réserver"} click={handleReservation} />
+        </form>
       </div>
-
-      <button onClick={handleReservation}>Réserver</button>
       <Footer />
     </div>
   );

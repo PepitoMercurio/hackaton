@@ -44,7 +44,7 @@ export default function Footer() {
                             <div className="footer-widget">
                                 <div className="footer-logo">
                                     <a href="/">
-                                        <h1>Yacine</h1>
+                                        <h1>LacaBikes</h1>
                                     </a>
                                 </div>
                                 <div className="footer-text">

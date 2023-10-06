@@ -20,19 +20,19 @@ const db = new sqlite3.Database('./hackaton.db', (err) => {  // Correction de la
 
 app.use(bodyParser.json());
 
-app.post('/sign-up', async (req, res) => {
-  const { name, lastname, email, password } = req.body;
+app.post('/addUser', (req, res) => {
+  const {id, name, lastname, age, address_id, email, phonenumber, password, user_type, co2_id } = req.body;
 
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const query = `INSERT INTO Users (id, name, lastname, age, address_id, email, phonenumber, password, user_type, co2_id)
+                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-  const query = 'INSERT INTO Users (name, lastname, email, password) VALUES (?, ?, ?, ?)';
-  db.run(query, [name, lastname, email, hashedPassword], (err) => {  // Utilisation de db.run() pour exécuter la requête SQLite
+  db.run(query, [id, name, lastname, age, address_id, email, phonenumber, password, user_type, co2_id], function(err) {
     if (err) {
-      console.error('Erreur lors de l\'inscription : ' + err.message);
-      res.status(500).json({ error: 'Erreur lors de l\'inscription' });
+      console.error('Erreur lors de l\'ajout de l\'utilisateur', err.message);
+      res.status(500).json({ error: 'Erreur lors de l\'ajout de l\'utilisateur' });
     } else {
-      console.log('Inscription réussie');
-      res.status(200).json({ message: 'Inscription réussie' });
+      console.log(`Utilisateur ajouté avec l'ID ${this.lastID}`);
+      res.status(200).json({ message: 'Utilisateur ajouté avec succès' });
     }
   });
 });
@@ -50,6 +50,24 @@ app.get('/getUsers', (req, res) => {
     res.json(results);
   });
 });
+
+app.post('/add-reservation', (req, res) => {
+  const { id, user_id, station_id, reserv_date, total_price } = req.body;
+
+  const query = `INSERT INTO reservation (id, user_id, station_id, reserv_date, total_price)
+                 VALUES (?, ?, ?, ?, ?)`;
+
+  db.run(query, [id, user_id, station_id, reserv_date, total_price], function(err) {
+    if (err) {
+      console.error('Erreur lors de l\'ajout de la réservation', err.message);
+      res.status(500).json({ error: 'Erreur lors de l\'ajout de la réservation' });
+    } else {
+      console.log(`Réservation ajoutée avec l'ID ${this.lastID}`);
+      res.status(200).json({ message: 'Réservation ajoutée avec succès' });
+    }
+  });
+});
+
 
 
 app.get('/check-login/:email/:password', async (req, res) => {
