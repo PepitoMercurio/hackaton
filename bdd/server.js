@@ -1,34 +1,32 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Middleware pour gérer les requêtes CORS
+const bcrypt = require('bcrypt');
 
 const app = express();
-const port = 3001; // Utilisez un port différent de votre application React (3000)
-
-app.use(cors()); // Activez CORS pour accepter les requêtes depuis tous les domaines
+const port = 3001;
 
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
-  database: 'Hackaton',
-});
-
-// Connectez-vous à la base de données MySQL
-db.connect((err) => {
-  if (err) {
-    console.error('Erreur de connexion à la base de données : ' + err.message);
-  } else {
-    console.log('Connecté à la base de données MySQL');
-  }
+  password: null,
+  database: 'hackaton',
 });
 
 // Middleware pour analyser les données JSON
 app.use(bodyParser.json());
 
+// Connectez-vous à la base de données MySQL
+db.connect((err) => {
+  if (err) {
+    console.error('Erreur de connexion à la base de données : ' + err.message);
+    return;
+  }
+  console.log('Connecté à la base de données MySQL');
+});
+
 // Endpoint pour gérer l'inscription
-app.post('http://127.0.0.1/phpmyadmin/index.php', async (req, res) => {
+app.post('/sign-up', async (req, res) => {
   const { name, lastname, email, password } = req.body;
 
   // Hachez le mot de passe avant de le stocker dans la base de données
@@ -46,8 +44,24 @@ app.post('http://127.0.0.1/phpmyadmin/index.php', async (req, res) => {
   });
 });
 
+app.get('/test', (req, res) => {
+  const sqlQuery = 'SELECT * FROM users';
+
+  // Exécutez la requête SQL
+  db.query(sqlQuery, (error, results) => {
+    if (error) {
+      console.error('Erreur lors de l\'exécution de la requête SQL :', error);
+      res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+      return;
+    }
+
+    // Envoie les résultats en tant que réponse
+    res.json(results);
+  });
+});
+
 // Endpoint pour gérer la connexion
-app.post('http://127.0.0.1/phpmyadmin/index.php', async (req, res) => {
+app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
   // Recherchez l'utilisateur dans la base de données par email
