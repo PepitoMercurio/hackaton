@@ -17,7 +17,8 @@
         padding: 2rem;
         width: 80%; /* Ajustez la largeur du formulaire pour les écrans plus petits */
         max-width: 400px; /* Limitez la largeur maximale pour éviter qu'elle ne devienne trop grande */
-        background-color: #202020;
+        background-color: #151414;
+        box-shadow: 2px 5px#ffffffb6;
         border-radius: 20px;
 
         input {
@@ -25,8 +26,9 @@
             border-radius: 2px;
             width: 100%; /* Remplissez la largeur du conteneur parent */
             margin-bottom: 1rem;
-            background-color: rgba(0, 0, 0, 0.5);
+            // background-color: rgba(0, 0, 0, 0.5);
             color: white;
+
         }
 
         p {

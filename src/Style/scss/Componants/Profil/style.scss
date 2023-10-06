@@ -5,12 +5,28 @@
     align-items: center;
     text-align: center;
     padding-top: 3rem;
+    
+    margin: 3rem auto;
+    width: 30%;
+    color: white;
+    // padding: 2rem;
     // background: linear-gradient(#34cb85, rgba(251, 238, 218, 0.056));
-
+    h1{
+        color: #ff5e14;
+    }
     img {
         width: 15rem;
         height: 15rem;
         object-fit: cover;
         border-radius: 100%;
+    }
+    
+}
+.Porfil-text{
+    background-color: #202020;
+}
+@media (max-width: 768px) {
+    .Profil {
+        width: 90%; /* Ajustez la largeur pour les écrans plus petits */
     }
 }

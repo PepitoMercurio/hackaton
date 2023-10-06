@@ -7,13 +7,18 @@
     margin-bottom: 3rem;
 
     .Reservations {
-        background-color: #3ae5956c;
+        background-color:#151414;
+        border-radius: 20px;
         width: 25rem;
         height: 30rem;
         overflow-y: scroll;
         border-radius: 5px;
         padding: 2rem;
-        margin-bottom: 3rem;
+        margin: 3rem;
+        color: white;
+        h2{
+            color: #ff5e14;
+        }
 
         &::-webkit-scrollbar{
             width: 7px;

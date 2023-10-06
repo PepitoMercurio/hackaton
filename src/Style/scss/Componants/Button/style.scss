@@ -2,7 +2,7 @@
     // background-color:#2fbb7a ;
     background-color:#151414;
     // background-color: #3AE594;
-    color: black;
+    color: rgb(255, 255, 255);
     padding-top: 0.5rem;
     padding-bottom: 0.7rem;
     padding-left: 2rem;
@@ -11,6 +11,7 @@
     transition-duration: 0.5s;
     cursor: pointer;
     box-shadow: 2px 5px#ff5e14;
+    border: 1px solid #ff5e14;
 
     &:hover {
         // background-color: rgb(230, 230, 230);

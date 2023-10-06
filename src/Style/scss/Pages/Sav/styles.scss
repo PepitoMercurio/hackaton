@@ -10,13 +10,21 @@
         border-radius: 5px;
     }
     .Image h2{
-        
+        // color: #ff5e14;
+        // color: #757575;
+        color: #ff5e14;
+    }
+    .Intro h3 {
+        color: white;
+    }
+    .Etapes p{
+        color: #eeeeee;
     }
     &__etape{
         width: 45%;
         margin: 5rem auto;
     }
     .Titre h2{
-        color: rgb(253, 36, 36);
+        color: #ff5e14;
     }
 }
