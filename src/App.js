@@ -7,6 +7,7 @@ import PayemantPage from './Pages/Payement';
 import ProfilPage from './Pages/Profil';
 import AdminPage from './Pages/Admin';
 import APIFetcher from './Compotants/FetchAPI_V/APIFetcher';
+import Borne from './Compotants/Borne';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/profil" element={<ProfilPage />} />
         <Route path="/reservation" element={<APIFetcher />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/:id" element={<Borne />} />
       </Routes>
     </Router>
     </div>
