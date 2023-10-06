@@ -8,6 +8,9 @@ Projet fait par :
 - BOUCEBAINE Theo 
 - Etheve Coranthin
 - Da Cunha Gomes Daniel
+
+Nous avons créé un site web qui réunit toutes les informations sur les stations de vélib' à proximité, en prévision de la Coupe du Monde de Rugby, pour rendre vos déplacements dans la magnifique capitale de Paris encore plus pratiques.
+
 In the project directory, you can run:
 
 ### `npm i`
