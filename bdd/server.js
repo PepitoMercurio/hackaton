@@ -4,26 +4,26 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 const db = mysql.createConnection({
-  host: '127.0.0.1',
+  host: 'localhost',
   user: 'root',
-  password: '',
-  database: 'Hackaton',
+  password: null,
+  database: 'hackaton',
 });
+
+// Middleware pour analyser les données JSON
+app.use(bodyParser.json());
 
 // Connectez-vous à la base de données MySQL
 db.connect((err) => {
   if (err) {
     console.error('Erreur de connexion à la base de données : ' + err.message);
-  } else {
-    console.log('Connecté à la base de données MySQL');
+    return;
   }
+  console.log('Connecté à la base de données MySQL');
 });
-
-// Middleware pour analyser les données JSON
-app.use(bodyParser.json());
 
 // Endpoint pour gérer l'inscription
 app.post('/sign-up', async (req, res) => {
@@ -32,7 +32,7 @@ app.post('/sign-up', async (req, res) => {
   // Hachez le mot de passe avant de le stocker dans la base de données
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const query = 'INSERT INTO Users (id, name, lastname, age, email, password) VALUES (?, ?, ?, ?)';
+  const query = 'INSERT INTO Users (name, lastname, email, password) VALUES (?, ?, ?, ?)';
   db.query(query, [name, lastname, email, hashedPassword], (err, result) => {
     if (err) {
       console.error('Erreur lors de l\'inscription : ' + err.message);
@@ -41,6 +41,22 @@ app.post('/sign-up', async (req, res) => {
       console.log('Inscription réussie');
       res.status(200).json({ message: 'Inscription réussie' });
     }
+  });
+});
+
+app.get('/test', (req, res) => {
+  const sqlQuery = 'SELECT * FROM users';
+
+  // Exécutez la requête SQL
+  db.query(sqlQuery, (error, results) => {
+    if (error) {
+      console.error('Erreur lors de l\'exécution de la requête SQL :', error);
+      res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+      return;
+    }
+
+    // Envoie les résultats en tant que réponse
+    res.json(results);
   });
 });
 
