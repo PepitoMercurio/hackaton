@@ -41,8 +41,6 @@ export default function Mailer() {
 
                 <Button text={"Envoyer"} />
 
-                {/* <input className="Mailer-button" type="submit" value="Send" /> */}
-
                 <p>{confirmMessage}</p>
             </form>
         </div>
