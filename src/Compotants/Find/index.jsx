@@ -38,7 +38,7 @@ export default function Find() {
             value={address}
             onChange={handleAddressChange}
           />
-          <Button text="Rechercher" />
+          {/* <Button text="Rechercher" /> */}
         </form>
       </div>
     </div>
