@@ -6,6 +6,7 @@
 
     h2 {
         margin-bottom: 2rem;
+        color: #ff5e14;
     }
 
     .SignIn-form {
@@ -14,31 +15,38 @@
         align-items: center;
         margin: 5rem auto;
         padding: 2rem;
-        width: 25%;
-        background-color: #17995C;
-        // padding: 2rem;
-        // padding-left: 10%;
-        // padding-right: 10%;
+        width: 80%; /* Ajustez la largeur du formulaire pour les écrans plus petits */
+        max-width: 400px; /* Limitez la largeur maximale pour éviter qu'elle ne devienne trop grande */
+        background-color: #202020;
         border-radius: 20px;
 
-    
         input {
             padding: 0.5rem;
             border-radius: 2px;
-            width: 14rem;
-            margin-bottom: 2rem;
+            width: 100%; /* Remplissez la largeur du conteneur parent */
+            margin-bottom: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
         }
 
         p {
             font-size: smaller;
+            color: white;
         }
-        
     }
-    
 }
-.SignIn-input{
+
+.SignIn-input {
     margin-top: 2rem;
-display: flex;
-flex-direction: column;
-text-align:left;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: white;
+}
+
+/* Ajoutez des Media Queries pour des ajustements spécifiques en fonction de la largeur de l'écran */
+@media (max-width: 768px) {
+    .SignIn-form {
+        width: 90%; /* Ajustez la largeur pour les écrans plus petits */
+    }
 }

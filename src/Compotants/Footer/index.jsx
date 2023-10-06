@@ -23,7 +23,7 @@ export default function Footer() {
                                 <FontAwesomeIcon icon={faPhone} />
                                 <div className="cta-text">
                                     <h4>Call us</h4>
-                                    <span>9876543210 0</span>
+                                    <span>07 81 27 36 84</span>
                                 </div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@ export default function Footer() {
                                 <FontAwesomeIcon icon={faEnvelopeOpen} />
                                 <div className="cta-text">
                                     <h4>Mail us</h4>
-                                    <span>mail@info.com</span>
+                                    <span>TheoBou@gmail.com</span>
                                 </div>
                             </div>
                         </div>
