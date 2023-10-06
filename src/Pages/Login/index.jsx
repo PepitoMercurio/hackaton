@@ -22,7 +22,7 @@ export default function LoginPage() {
                     <input type="password" name="password"/>
                 </div>
                 
-                <Button text="Se Connecter" />
+                <Button text="Se Connecter"/>
                 <p>Vous n'avez pas encore de compte ? <a href="/sign-in">Inscrivez-Vous</a></p>
             </form>
             <Footer/>
