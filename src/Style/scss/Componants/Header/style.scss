@@ -6,7 +6,7 @@
 	color: #ffffff;
 	box-sizing: border-box;
 	top:-100px;
-
+    width: 100%;
 	-webkit-transition:top 0.3s;
 	transition:top 0.3s;
 }
@@ -137,5 +137,5 @@ body.fixed .header-fixed .header-limiter nav {
 body {
 	margin: 0;
 	padding: 0;
-	height: 1500px;
+	
 }
