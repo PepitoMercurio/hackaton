@@ -14,8 +14,6 @@ function CustomDataDisplay({ data }) {
             <li key={index}>
               <p>Station : {station.name}</p>
               <p>Capacité : {station.capacity} places</p>
-              <p>Longitude : {station.coordonnees_geo.lon}</p>
-              <p>Latitude : {station.coordonnees_geo.lat}</p>
             </li>
           ))}
         </ul>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import BornesFetch from '../../API/BornesFetch';
 import CustomDataDisplay from './CustomDataDisplay';
-import MapDisplay from './MapDisplay'; // Assurez-vous que le chemin d'importation est correct
+import MapDisplay from './MapDisplay';
 import Header from '../Header';
 import Footer from '../Footer';
 

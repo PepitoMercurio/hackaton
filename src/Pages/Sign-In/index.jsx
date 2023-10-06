@@ -10,7 +10,7 @@ export default function SignInPage() {
         <div className="SignIn">
             <Header/>
 
-            <form className="SignIn-form" onSubmit={submitForm}>
+            <form className="SignIn-form">
                 <h2>S'inscrire</h2>
                 <div className="SignIn-input">
                     <label>Nom</label>
@@ -29,7 +29,7 @@ export default function SignInPage() {
                     <input type="password" name="password" />
                 </div>
 
-                <Button text="S'inscrire" />
+                <Button text="S'inscrire" click={submitForm}/>
                 <p>Vous avez déjà un compte ? <a href="/login">Connectez-Vous</a></p>
             </form>
             <Footer/>

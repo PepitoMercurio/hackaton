@@ -9,7 +9,7 @@ export default function LoginPage() {
     return (
         <div className="Login">
             <Header/>
-            <form className="Login-form" onSubmit={loginForm}>
+            <form className="Login-form">
                 <div className="titre">
                     <h2>Se Connecter</h2>
                 </div>
@@ -22,7 +22,7 @@ export default function LoginPage() {
                     <input type="password" name="password"/>
                 </div>
                 
-                <Button text="Se Connecter"/>
+                <Button text="Se Connecter" click={loginForm}/>
                 <p>Vous n'avez pas encore de compte ? <a href="/sign-in">Inscrivez-Vous</a></p>
             </form>
             <Footer/>

@@ -3,10 +3,10 @@ import axios from "axios";
 const submitForm = async (e) => {
     e.preventDefault();
 
-    const name = e.target.elements.lastName.value;
-    const lastname = e.target.elements.firstName.value;
+    const name = e.target.elements.name.value;
+    const lastname = e.target.elements.lastname.value;
     const email = e.target.elements.email.value;
-    const password = e.target.elements.pass.value;
+    const password = e.target.elements.password.value;
 
     try {
         const response = await axios.post('/sign-in', {
