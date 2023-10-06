@@ -1,13 +1,15 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
+const cors = require('cors'); // Middleware pour gérer les requêtes CORS
 
 const app = express();
-const port = 3000;
+const port = 3001; // Utilisez un port différent de votre application React (3000)
+
+app.use(cors()); // Activez CORS pour accepter les requêtes depuis tous les domaines
 
 const db = mysql.createConnection({
-  host: '127.0.0.1',
+  host: 'localhost',
   user: 'root',
   password: '',
   database: 'Hackaton',
@@ -26,7 +28,7 @@ db.connect((err) => {
 app.use(bodyParser.json());
 
 // Endpoint pour gérer l'inscription
-app.post('/sign-up', async (req, res) => {
+app.post('http://127.0.0.1/phpmyadmin/index.php', async (req, res) => {
   const { name, lastname, email, password } = req.body;
 
   // Hachez le mot de passe avant de le stocker dans la base de données
@@ -45,7 +47,7 @@ app.post('/sign-up', async (req, res) => {
 });
 
 // Endpoint pour gérer la connexion
-app.post('/login', async (req, res) => {
+app.post('http://127.0.0.1/phpmyadmin/index.php', async (req, res) => {
   const { email, password } = req.body;
 
   // Recherchez l'utilisateur dans la base de données par email

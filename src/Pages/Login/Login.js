@@ -1,15 +1,18 @@
 import axios from "axios";
 
-const loginForm = async (e) => {
+export const loginForm = async (e) => {
     e.preventDefault();
 
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
 
+    console.log('Email:', email); 
+    console.log('Password:', password); 
+
     try {
-        const response = await axios.post('/login', {
+        const response = await axios.post('http://127.0.0.1/phpmyadmin/index.php', {
             email,
-            password,
+            password
         });
 
         console.log('Réponse du backend :', response.data);
@@ -18,4 +21,3 @@ const loginForm = async (e) => {
     }
 };
 
-export default loginForm;

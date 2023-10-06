@@ -29,7 +29,7 @@ export default function SignInPage() {
                     <input type="password" name="password" />
                 </div>
 
-                <Button text="S'inscrire" click={submitForm}/>
+                <Button text="S'inscrire" onClick={submitForm}/>
                 <p>Vous avez déjà un compte ? <a href="/login">Connectez-Vous</a></p>
             </form>
             <Footer/>
