@@ -7,11 +7,15 @@ import "../../Style/scss/Componants/Find/style.scss";
 export default function Find() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [address, setAddress] = useState('');
 
   useEffect(() => {
-    // Appel à la fonction BornesFetch pour récupérer les données
     BornesFetch({ setData, setLoading });
   }, []);
+
+  const handleAddressChange = (event) => {
+    setAddress(event.target.value);
+  };
 
   return (
     <div className="Find">
@@ -27,6 +31,8 @@ export default function Find() {
             name="address"
             className="address"
             placeholder="Adresse (ex : Pl. Charles de Gaulle, 75008 Paris)"
+            value={address}
+            onChange={handleAddressChange}
           />
           <Button text="Rechercher" />
         </form>
