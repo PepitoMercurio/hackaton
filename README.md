@@ -3,10 +3,25 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+Projet fait par :
+- DAOUDI Mohamed
+- BOUCEBAINE Theo 
+- Etheve Coranthin
+- Da Cunha Gomes Daniel
+
+Nous avons créé un site web qui réunit toutes les informations sur les stations de vélib' à proximité en prévision de la Coupe du Monde de Rugby et des JO 2024 pour rendre vos déplacements dans la magnifique capitale de Paris encore plus pratiques.
+Nous avons donc intégré un système de réservation des Vélibs qui facilitera son acquisition mais il sera toujours possible de les acquérir à l'instant même.
+Un système de payement en ligne à donc été mis en place.
+
+ne pas oublier de git switch front
+Pour avoir tous le projet 
 
 In the project directory, you can run:
 
+### `npm i`
+
 ### `npm start`
+### `start bdd (cd ./bdd/ -> node server.js)`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

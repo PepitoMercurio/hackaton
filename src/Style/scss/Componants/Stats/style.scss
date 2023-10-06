@@ -1,0 +1,26 @@
+.Stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    h1{
+        color: #ff5e14;
+    }
+
+    .Stats-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 50%;
+
+        .Stat{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .Stat h2{
+            color: #ffffff;
+        }
+    }
+}

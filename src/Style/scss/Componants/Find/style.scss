@@ -1,0 +1,48 @@
+.Find {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 3rem;
+    img {
+        max-width: 30%;
+        max-height: 40rem;
+        margin: auto;
+    }
+    .Find-contenue{
+        margin: auto;
+        padding: 2rem;
+        // background-color: rgba(125, 156, 237, 1);
+        // background-color: rgb(248, 248, 248);
+        box-shadow: 5px black;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .Find-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+        border-top: 1px solid black;
+        input {
+            width: 20rem;
+            height: 1.3rem;
+            padding: 0.5rem;
+        }
+
+        // .search {
+        //     background-color: lightcyan;
+        //     padding-top: 0.5rem;
+        //     padding-bottom: 0.7rem;
+        //     padding-left: 2rem;
+        //     padding-right: 2rem;
+        //     border-radius: 2rem;
+        //     transition-duration: 0.5s;
+
+        //     &:hover {
+        //         background-color: cyan;
+        //         transition-duration: 0.5s;
+        //     }
+        // }
+    }
+}
