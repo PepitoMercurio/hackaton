@@ -11,9 +11,11 @@ function MapDisplay(props) {
   const [lon, setLon] = useState(null);
   const [loading, setLoading] = useState(true);
   const defaultAddress = "75010 Paris";
-  const address = props.address || defaultAddress; // Utiliser props.address ou l'adresse par défaut
+  let address = props.address || defaultAddress; // Utiliser props.address ou l'adresse par défaut
 
   useEffect(() => {
+    setLoading(true); // Début du chargement
+
     const geocodeUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
       address
     )}&format=json`;
@@ -22,22 +24,26 @@ function MapDisplay(props) {
       .get(geocodeUrl)
       .then((response) => {
         if (response.data && response.data.length > 0) {
-          const { lat, lon } = response.data[0];
+          let { lat, lon } = response.data[0];
           console.log("ADRS " + lat + " " + lon);
           setLat(lat);
           setLon(lon);
         }
-        setLoading(false); // Arrête le chargement une fois que les coordonnées sont disponibles
+        setLoading(false); // Fin du chargement une fois que les coordonnées sont disponibles
       })
       .catch((error) => {
         console.error('Erreur lors de la géocodage :', error);
-        setLoading(false); // Arrête le chargement en cas d'erreur
+        setLoading(false); // Fin du chargement en cas d'erreur
       });
   }, [address]);
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '400px' }}>
-      {loading && <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>Chargement en cours...</div>}
+      {loading && (
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+          Chargement en cours...
+        </div>
+      )}
       {!loading && (
         <MapContainer
           center={lat && lon ? [lat, lon] : [0, 0]}

@@ -18,12 +18,14 @@ export default function Find() {
     setAddress(event.target.value);
   };
 
+  console.log(address);
+
   return (
     <div className="Find">
         <img src={velibImage} alt="Velib Paris" />
       <div className="Find-contenue">
         {!loading ? (
-          <MapDisplay stations={data.results} />
+          <MapDisplay stations={data.results} address={address} />
         ) : (
           <p>Chargement...</p>
         )}
