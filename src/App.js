@@ -21,7 +21,7 @@ function App() {
         <Route path="/payement" element={<PayemantPage />} />  
         <Route path="/sav" element={<SavPage />} />  
         <Route path="/profil" element={<ProfilPage />} />
-        <Route path="/reservation" element={<APIFetcher />} />
+        {/* <Route path="/reservation" element={<APIFetcher />} /> */}
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/:id" element={<Borne />} />
       </Routes>

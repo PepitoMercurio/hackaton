@@ -24,8 +24,8 @@ export default function Banner() {
             <img src={velibImage} alt="Velib Paris" />
             <div className="Banner-title">
                 <div className="Banner-title-text">
-                    <h1>Pigeon</h1>
-                    <p>Butter Dog Suppremacy</p>
+                    <h1>LocaBikes</h1>
+                    <p>Des vélos partouts autours de nous</p>
                 </div>
             </div>
         </div>

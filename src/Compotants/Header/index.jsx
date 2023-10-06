@@ -14,7 +14,7 @@ export default function Header() {
 
             <div class="header-limiter">
 
-                <h1><a href="/">Company<span>logo</span></a></h1>
+                <h1><a href="/">Loca<span>Bikes</span></a></h1>
 
                 <nav>
                     {/* <a href="#">Home</a> */}
