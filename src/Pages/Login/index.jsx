@@ -3,22 +3,23 @@ import Header from "../../Compotants/Header";
 import Button from "../../Compotants/Button";
 import "../../Style/scss/Pages/Login/style.scss"
 import Footer from "../../Compotants/Footer";
+import loginForm from "./Login";
 
 export default function LoginPage() {
     return (
         <div className="Login">
             <Header/>
-            <form className="Login-form">
+            <form className="Login-form" onSubmit={loginForm}>
                 <div className="titre">
                     <h2>Se Connecter</h2>
                 </div>
                 
                 <div className="Login-input">
-                    
                     <label>Email</label>
                     <input type="email" name="email"/>
+                    
                     <label>Password</label>
-                    <input type="password" name="pass"/>
+                    <input type="password" name="password"/>
                 </div>
                 
                 <Button text="Se Connecter" />

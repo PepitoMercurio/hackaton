@@ -8,18 +8,24 @@ import velibImage from "../../Style/img/Velib-couple.png";
 export default function Find() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [address, setAddress] = useState('');
 
   useEffect(() => {
-    // Appel à la fonction BornesFetch pour récupérer les données
     BornesFetch({ setData, setLoading });
   }, []);
+
+  const handleAddressChange = (event) => {
+    setAddress(event.target.value);
+  };
+
+  console.log(address);
 
   return (
     <div className="Find">
         <img src={velibImage} alt="Velib Paris" />
       <div className="Find-contenue">
         {!loading ? (
-          <MapDisplay stations={data.results} />
+          <MapDisplay stations={data.results} address={address} />
         ) : (
           <p>Chargement...</p>
         )}
@@ -29,8 +35,10 @@ export default function Find() {
             name="address"
             className="address"
             placeholder="Adresse (ex : Pl. Charles de Gaulle, 75008 Paris)"
+            value={address}
+            onChange={handleAddressChange}
           />
-          <Button text="Rechercher" />
+          {/* <Button text="Rechercher" /> */}
         </form>
       </div>
     </div>
