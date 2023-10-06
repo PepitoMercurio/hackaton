@@ -1,7 +1,7 @@
 .Button {
-    background-color:#2fbb7a ;
-    
-    background-color: #3AE594;
+    // background-color:#2fbb7a ;
+    background-color: rgba(162, 180, 58, 1);
+    // background-color: #3AE594;
     color: black;
     padding-top: 0.5rem;
     padding-bottom: 0.7rem;
@@ -12,7 +12,8 @@
     cursor: pointer;
 
     &:hover {
-        background-color: rgb(230, 230, 230);
+        // background-color: rgb(230, 230, 230);
+        background-color: rgba(185, 206, 61, 1);
         transition-duration: 0.5s;
     }
 }
