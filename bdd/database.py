@@ -1,44 +1,19 @@
-import mysql.connector
+import sqlite3
 
-# Paramètres de connexion à la base de données hébergée sur un serveur distant
-host = "192.168.184.205"
-port = 3306
-user = "admin"
-password = "mdp"
-database = "Hackaton"
+sql_file = "app.sql"
+conn = sqlite3.connect("Hackaton.db")
 
-# Fonction permettant d'exécuter les requêtes SQL depuis un fichier
-def execute_sql_from_file(cursor, file_path):
-    try:
-        with open(file_path, 'r') as sql_file:
-            sql_statements = sql_file.read().split(';') # Séparation des requêtes SQL pour une exécution séparée
-            for sql_statement in sql_statements:
-                if sql_statement.strip():
-                    cursor.execute(sql_statement)
-    except mysql.connector.Error as e:
-        print(f"Erreur lors de l'exécution des requêtes SQL : {e}")
-
-# Connexion à la base de données
 try:
-    conn = mysql.connector.connect(
-        host=host,
-        port=port,
-        user=user,
-        password=password,
-        database=database
-    )
-
     cursor = conn.cursor()
 
-    # Chemin vers le fichier SQL contenant les requêtes
-    sql_file_path = 'app.sql'
+    with open(sql_file, "r") as file:
+        sql_code = file.read()
 
-    # Exécution de toutes les requêtes SQL à partir du fichier
-    execute_sql_from_file(cursor, sql_file_path)
-
+    cursor.executescript(sql_code)
     conn.commit()
+    cursor.close()
     conn.close()
 
-    print('OK')
-except mysql.connector.Error as e:
-    print(f"Erreur lors de la connexion à la base de données : {e}")
+    print(f"Le fichier SQL '{sql_file}' a été exécuté avec succès dans la base de données SQLite.")
+except Exception as e:
+    print(f"Une erreur s'est produite : {str(e)}")
