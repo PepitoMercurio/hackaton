@@ -10,11 +10,11 @@ export default function Stats() {
             <h1>Statistiques</h1>
             <div className="Stats-list">
                 <div className="Stat">
-                    <FontAwesomeIcon icon={faBicycle} style={{color: "#000000", fontSize: "5rem"}} />
+                    <FontAwesomeIcon icon={faBicycle} style={{color: "#ffffff", fontSize: "5rem"}} />
                     <h2>40 vélos</h2>
                 </div>
                 <div className="Stat">
-                    <FontAwesomeIcon icon={faTablet} style={{color: "#000000", fontSize: "5rem"}} />
+                    <FontAwesomeIcon icon={faTablet} style={{color: "#ffffff", fontSize: "5rem"}} />
                     <h2>40 bornes</h2>
                 </div>
             </div>

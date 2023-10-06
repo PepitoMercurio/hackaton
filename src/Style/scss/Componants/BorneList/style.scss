@@ -5,6 +5,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    
+    
+
 
     .BorneList-list {
         width: 100%;
@@ -12,4 +15,15 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
+    .BorneList-Borne{
+        background-color: rgb(216, 216, 216);
+        padding: 3rem;
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+        box-shadow: 5px 3px 0px 2px #151414;
+    }
+}
+.BorneList h2{
+    color: #ff5e14;
+margin: 3rem;
 }

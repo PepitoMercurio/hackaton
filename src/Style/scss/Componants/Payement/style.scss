@@ -3,21 +3,33 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 5rem;
-
+    h2{
+        color: #ff5e14;
+    }
     .Payement-content {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
 
+        
         .Payement-detail, .Payement-form {
             width: 40rem;
+            h3{
+                color: white;
+            }
+            p{
+                color: white;
+            }
         }
 
         .Payement-form {
+            padding: 1rem;
+            // background-color: beige;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: white;
 
             input {
                 margin-bottom: 1rem;
