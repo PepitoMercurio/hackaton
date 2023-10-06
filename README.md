@@ -9,7 +9,9 @@ Projet fait par :
 - Etheve Coranthin
 - Da Cunha Gomes Daniel
 
-Nous avons créé un site web qui réunit toutes les informations sur les stations de vélib' à proximité, en prévision de la Coupe du Monde de Rugby, pour rendre vos déplacements dans la magnifique capitale de Paris encore plus pratiques.
+Nous avons créé un site web qui réunit toutes les informations sur les stations de vélib' à proximité en prévision de la Coupe du Monde de Rugby et des JO 2024 pour rendre vos déplacements dans la magnifique capitale de Paris encore plus pratiques.
+Nous avons donc intégré un système de réservation des Vélibs qui facilitera son acquisition mais il sera toujours possible de les acquérir à l'instant même.
+Un système de payement en ligne à donc été mis en place.
 
 ne pas oublier de git switch front
 Pour avoir tous le projet 
